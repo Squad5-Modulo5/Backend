@@ -1,6 +1,6 @@
 import { DataTypes, Sequelize, UUID} from "sequelize";
 import { sequelize as database } from "../database/connection.js";
-import { ProductEntity } from "./Product.entity.js";
+import { ProductEntity } from "/Product.entity.js";
 
 const HistorieEntity = database.define("tb_histories", {
     id: {

@@ -1,6 +1,7 @@
-import { body } from "express-validator";
-import { UserEntity } from "../../../entities/User.entity.js";
-import { ERRORS, VALIDATION } from "../../../shared/messages.js";
+
+import {body} from "express-validator";
+import { UserEntity } from "../../../Entities/User.entity.js";
+import {VALIDATION, ERRORS} from "../../../shared/messages.js";
 
 export const registerUserValidator = [
     // Validações de nome
@@ -33,6 +34,6 @@ export const registerUserValidator = [
         .isEmpty()
         .isLength({ min: 6 })
         .withMessage("O tamanho mínimo da senha é de 6 caracteres")
-        .matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{6,}$/)
+        .matches(/^(?=.*[a-z])(?=.*[A-F])(?=.*\d)[a-zA-Z\d]{6,}$/)
         .withMessage("A senha deve conter letras maiúsculas, minúsculas e números"),
 ];

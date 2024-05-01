@@ -35,6 +35,7 @@ class ConsumptionService{
     }
        { 
         await ConsumptionEntity.update( 
+          
             { resultConsumption : newresultConsumption },
             {
               where: {

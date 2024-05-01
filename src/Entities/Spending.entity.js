@@ -1,6 +1,6 @@
 import { DataTypes, Sequelize} from "sequelize";
 import { sequelize as database } from "../database/connection.js";
-import { ConsumptionEntity } from "./Consumption.entity.js";
+import { ConsumptionEntity } from "/Consumption.entity.js";
 
 
 const SpendingEntity = database.define("tb_spending", {

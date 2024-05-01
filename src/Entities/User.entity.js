@@ -1,7 +1,7 @@
-import { DataTypes, Sequelize, UUID} from "sequelize";
+import { DataTypes, Sequelize} from "sequelize";
 import { sequelize as database } from "../database/connection.js";
 
-export const UserEntity = database.define("tb_User_ecolwkt", {
+export const UserEntity = database.define("tb_User", {
 
     id: {
         type: DataTypes.UUID,
@@ -9,15 +9,15 @@ export const UserEntity = database.define("tb_User_ecolwkt", {
         primaryKey: true
     },
     name: {
-        type: DataTypes.STRING(50),
+        type: DataTypes.STRING,
         allowNull: false
     },
     email: {
-        type: DataTypes.STRING(100),
+        type: DataTypes.STRING,
         allowNull: false
     },
     password: {
-        type: DataTypes.STRING(50),
+        type: DataTypes.TEXT,
         allowNull: false
     },
         role: {

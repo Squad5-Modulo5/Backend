@@ -1,4 +1,4 @@
-import { UserEntity } from "../entities/User.entity.js";
+import { UserEntity } from "../Entities/User.entity.js";
 import bcrypt from "bcrypt";
 import { createToken } from "../helpers/user/createToken.js";
 import { validateUserCredentials } from "../helpers/user/validateCredentials.js";
