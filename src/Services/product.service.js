@@ -24,7 +24,7 @@ class ProductsService{
                 id,
             },
         });
-        return `Deletado com sucesso!`;
+        return `Deletado com sucesso!!`;
     }
 }
 export {ProductsService}
