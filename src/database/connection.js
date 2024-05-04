@@ -3,7 +3,7 @@ const sequelize = new Sequelize('mysql://root:oNkRJvtNGdMuzWvPGmdKKeJpvVpfIWCi@r
 
 const testConnection = async () => {
     try{
-        await sequelize.authenticate()
+        await sequelize.authenticate();
         console.log('Conexão com o banco de dados realizada com sucesso!')
     } catch(error){
         console.error('Conexão mal sucedida', error)
