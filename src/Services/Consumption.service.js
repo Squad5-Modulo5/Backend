@@ -1,24 +1,27 @@
 import { ConsumptionEntity } from "../Entities/Consumption.entity.js"
 class ConsumptionService{
-    async creatConsumption(
-        Measurement,
-        power,
-        duration,
-        days,
-        resultConsumption,
-        id_Product
-    )
-    {
-  ConsumptionEntity.sync()
-   const Consumption = await ConsumptionEntity.create(
-   { Measurement,
-    power,
-    duration,
-    days,
-    resultConsumption,
-    id_Product})
-     return Consumption
+  async createConsumption(Measurement, power, duration, days, id_Product) {
+  
+    const resultConsumption = (power * duration * days) / 1000;
+
+    try {
+     
+        const newConsumption = await ConsumptionEntity.create({
+            Measurement,
+            power,
+            duration,
+            days,
+            resultConsumption, 
+            id_Product
+        });
+
+        return newConsumption;
+    } catch (error) {
+    
+        console.error("Erro ao criar consumo:", error);
+        throw error;
     }
+}
     async getallConsumption()
     {
     const allConsumption = await ConsumptionEntity.findAll()

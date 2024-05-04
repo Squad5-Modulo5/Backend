@@ -4,14 +4,13 @@ import { ConsumptionService } from "../services/Consumption.service.js"
 const instacieServiceConsumption = new ConsumptionService
  
 const creatConsumptioncontroller = async (req, res)=>{
-    const{  Measurement,power,duration,days,resultConsumption}= req.body
+    const{  Measurement,power,duration,days}= req.body
     const {id_Product} = req.params
-    const newConsumption = await instacieServiceConsumption.creatConsumption(
+    const newConsumption = await instacieServiceConsumption.createConsumption(
         Measurement,
         power,
         duration,
         days,
-        resultConsumption,
         id_Product
         )
  
