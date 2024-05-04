@@ -1,6 +1,6 @@
 import { Router } from "express";
 import {createProductcontroller, getAllProductscontroller, deletePoductcontroller} from "../Controllers/product.controller.js";
-import { authUser } from "../middlewares/user/auth/authUser.middleware.js";
+import { authUser } from "../Middlewares/user/auth/authUser.middleware.js";
 const ProductRoutes = Router();
 
 ProductRoutes.post("/creatproducts/:id_User",authUser, createProductcontroller);
