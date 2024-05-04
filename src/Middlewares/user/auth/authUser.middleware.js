@@ -1,6 +1,9 @@
 import jwt from "jsonwebtoken";
 import { UnauthorizedError } from "../../../helpers/error/apiErrors.js";
-import { UserEntity } from "../../../entities/User.entity.js";
+import { UserEntity } from "../../../Entities/User.entity.js";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 export const authUser = async (req, res, next) => {
   const token = getTokenFromHeader(req.headers.authorization);

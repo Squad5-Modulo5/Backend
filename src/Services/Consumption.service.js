@@ -1,5 +1,4 @@
-import {ConsumptionEntity } from "../entities/Consumption.entity.js";
-
+import { ConsumptionEntity } from "../Entities/Consumption.entity.js"
 class ConsumptionService{
     async creatConsumption(
         Measurement,
@@ -35,8 +34,8 @@ class ConsumptionService{
     }
        { 
         await ConsumptionEntity.update( 
-          
-            { resultConsumption : newresultConsumption },
+         
+            { resultConsumption :  newresultConsumption },
             {
               where: {
                 id,

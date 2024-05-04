@@ -1,4 +1,4 @@
-import { UserEntity } from "../entities/User.entity.js";
+import { UserEntity } from "../Entities/User.entity.js";
 import { NotFoundError, UnauthorizedError } from "../helpers/error/apiErrors.js";
 
 export class AdminService {

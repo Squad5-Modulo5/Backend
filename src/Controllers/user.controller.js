@@ -1,4 +1,4 @@
-import { UserService } from "../services/user.service.js";
+import { UserService } from "../Services/User.service.js";
 import { SUCCESS } from "../shared/messages.js";
 
 class UserController {

@@ -8,7 +8,7 @@ const routes = Router();
 
 routes.use("/user", userRoutes);
 routes.use("/admin", adminRoutes);
-routes.use( ProductRoutes)
+routes.use("/products", ProductRoutes)
 routes.use("/consumpition", ConsumptionRoutes)
 
 export { routes };

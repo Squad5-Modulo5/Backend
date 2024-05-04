@@ -1,6 +1,7 @@
 
 import { DataTypes, Sequelize} from "sequelize";
 import { sequelize as database } from "../database/connection.js";
+import { UserEntity } from "./User.entity.js";
 
 
 const ProductEntity = database.define("tb_products", {
@@ -10,16 +11,29 @@ const ProductEntity = database.define("tb_products", {
         primaryKey: true
     },
    product_name: {
-        type: DataTypes.STRING(50),
+        type: DataTypes.STRING,
         allowNull: false
     },
     category: {
-        type: DataTypes.STRING(50),
+        type: DataTypes.STRING,
         allowNull: false
     }
     
     
 })
+ProductEntity.belongsTo(UserEntity, {
+    constraint: true,
+    foreignKey: 'id_User'
+})
+UserEntity.hasMany(ProductEntity, {
+ foreignKey: 'id_User',
+ constraints: false
+
+ })
+
+
+
+ 
      
 
 

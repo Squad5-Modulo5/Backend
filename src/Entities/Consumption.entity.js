@@ -1,7 +1,7 @@
 import { DataTypes, Sequelize } from "sequelize";
 import { sequelize as database } from "../database/connection.js";
-
-import { ProductEntity } from "/Product.entity.js";
+//import { UserEntity } from "/User.entity.js";
+import { ProductEntity } from "./Product.entity.js";
 
 Sequelize.UUIDV4 = undefined;
 const ConsumptionEntity = database.define("tb_consumptions", {
@@ -37,4 +37,5 @@ const ConsumptionEntity = database.define("tb_consumptions", {
         constraint: true,
         foreignKey: "id_Product"
     })
+
 export{ConsumptionEntity}
