@@ -1,4 +1,4 @@
-import { ConsumptionService } from "../services/Consumption.service.js"
+import { ConsumptionService } from "../Services/Consumption.service.js"
 
 
 const instacieServiceConsumption = new ConsumptionService

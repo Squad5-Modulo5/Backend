@@ -1,5 +1,5 @@
 import bcrypt from "bcrypt";
-import { UserEntity } from "../../entities/User.entity.js";
+import { UserEntity } from "../../Entities/User.entity.js";
 import { VALIDATION } from "../../shared/messages.js";
 import { BadRequestError } from "../error/apiErrors.js";
 
