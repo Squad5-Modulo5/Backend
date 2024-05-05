@@ -18,7 +18,7 @@ class ConsumptionService{
         return newConsumption;
     } catch (error) {
     
-        console.error("Erro ao criar consumo:", error);
+        console.error("Erro ao criar consumo!:", error);
         throw error;
     }
 }
