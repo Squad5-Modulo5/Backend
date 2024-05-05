@@ -3,7 +3,9 @@ import bcrypt from "bcrypt";
 import { createToken } from "../helpers/user/createToken.js";
 import { validateUserCredentials } from "../helpers/user/validateCredentials.js";
 import { NotFoundError, UnauthorizedError } from "../helpers/error/apiErrors.js";
+import dotenv from "dotenv";
 
+dotenv.config();
 export class UserService {
     static async registerService(name, email, password) {
         await UserEntity.sync();
