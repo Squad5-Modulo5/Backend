@@ -1,10 +1,11 @@
 import { DataTypes, Sequelize } from "sequelize";
 import { sequelize as database } from "../database/connection.js";
-import { ProductEntity } from "./Product.entity.js";
+
 
 const ConsumptionEntity = database.define("tb_consumptions", {
     id: {
         type: DataTypes.UUID,
+        // @ts-ignore
         defaultValue: Sequelize.UUIDV4,
         primaryKey: true
     },
@@ -31,9 +32,5 @@ const ConsumptionEntity = database.define("tb_consumptions", {
      
     });
 
-    ConsumptionEntity.belongsTo(ProductEntity,{
-        constraint: true,
-        foreignKey: "id_Product"
-    })
 
 export{ConsumptionEntity}

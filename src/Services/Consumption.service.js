@@ -1,6 +1,6 @@
 import { ConsumptionEntity } from "../Entities/Consumption.entity.js"
 class ConsumptionService{
-  async createConsumption(Measurement, power, duration, days, id_Product) {
+  async createConsumption(Measurement, power, duration, days) {
   
     const resultConsumption = (power * duration * days) / 1000;
 
@@ -11,14 +11,13 @@ class ConsumptionService{
             power,
             duration,
             days,
-            resultConsumption, 
-            id_Product
+            resultConsumption
         });
 
         return newConsumption;
     } catch (error) {
     
-        console.error("Erro ao criar consumo:", error);
+        console.error("Erro ao criar consumo!:", error);
         throw error;
     }
 }

@@ -1,5 +1,5 @@
 import { Sequelize } from "sequelize"
-const sequelize = new Sequelize('mysql://root:oNkRJvtNGdMuzWvPGmdKKeJpvVpfIWCi@roundhouse.proxy.rlwy.net:27050/railway')
+const sequelize = new Sequelize('mysql://root:gSKuRvhbtZliNYeYlaQPTsXfcAfEeyUc@roundhouse.proxy.rlwy.net:48851/railway')
 
 const testConnection = async () => {
     try{

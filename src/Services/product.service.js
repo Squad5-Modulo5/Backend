@@ -1,10 +1,10 @@
-import {ProductEntity} from "../Entities/Product.entity.js";
+/*import {ProductEntity} from "../Entities/Product.entity.js";
 class ProductsService{
    
-    async createProductservice( product_name, category, id_User )
+    async createProductservice( product_name, category )
     { 
     ProductEntity.sync()
-    const Product = await ProductEntity.create({product_name, category, id_User});
+    const Product = await ProductEntity.create({product_name, category});
     return Product
     }
   
@@ -28,4 +28,4 @@ class ProductsService{
     }
 }
 export {ProductsService}
- 
+ */

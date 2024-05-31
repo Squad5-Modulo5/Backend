@@ -1,12 +1,12 @@
-import {ProductsService} from "../Services/product.service.js";
+/*import {ProductsService} from "../Services/product.service.js";
 
 
 const instacieServiceproduct = new ProductsService
 
     const createProductcontroller =  async (req, res) => {
-    const {id_User} = req.params;
+
     const { product_name, category,} = req.body;
-    const newProduct = await instacieServiceproduct.createProductservice(product_name,category,id_User);
+    const newProduct = await instacieServiceproduct.createProductservice(product_name,category);
     res.json({newProduct});
 }
   
@@ -24,3 +24,4 @@ const  deletePoductcontroller = async(req,res)=>{
     export {createProductcontroller,
         getAllProductscontroller,
         deletePoductcontroller}
+*/
