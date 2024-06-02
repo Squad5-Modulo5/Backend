@@ -5,7 +5,7 @@ class ConsumptionService{
     const resultConsumption = (power * duration * days) / 1000;
 
     try {
-     
+
         const newConsumption = await ConsumptionEntity.create({
             Measurement,
             power,
