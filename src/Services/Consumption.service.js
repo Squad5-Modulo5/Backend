@@ -21,49 +21,35 @@ class ConsumptionService{
         console.error("Erro ao criar consumo!:", error);
         throw error;
     }
+
 }
     async getallConsumption()
     {
     const allConsumption = await ConsumptionEntity.findAll()
     return allConsumption
 }
-        
-        async updateConsumptionsevice(id, newresultConsumption )
-    {
-        const  ConsumptionID= await ConsumptionEntity.findByPk(id);
+async createConsumptionalone(Measurement, power, duration, days) {
+  
+  const resultConsumption = (power * duration * days) / 1000;
 
-        if(!ConsumptionID)
-        { throw new NotFoundError(`Consumption ${ERRORS.NOT_FOUND}`)
-    }
-       { 
-        await ConsumptionEntity.update( 
-         
-            { resultConsumption :  newresultConsumption },
-            {
-              where: {
-                id,
-              },
-            }
-            )
-    }
-   
+  try {
 
-}
-async UpdateConsumption(id, newIdproduct) {
-  const ConsumptionId = await ConsumptionEntity.findByPk(id);
-  if (!ConsumptionId) {
-      throw new NotFoundError(`Produto não encontrado(a)`);
+      const newConsumption = await ConsumptionEntity.create({
+          Measurement,
+          power,
+          duration,
+          days,
+          resultConsumption
+      });
+
+      return newConsumption;
+  } catch (error) {
+  
+      console.error("Erro ao criar consumo!:", error);
+      throw error;
   }
-  await ConsumptionEntity.update( 
-    { id_Product: newIdproduct},
-    {
-      where: {
-        id,
-      },
-    });
-  return `Deletado com sucesso!`;
-}
-
+}        
+     
 }
 
    export {ConsumptionService}

@@ -1,14 +1,14 @@
 import { Router } from "express";
-import { creatConsumptioncontroller,
-    getallConsumptioncontroller, 
-    updateConsumptionscontroler, 
-    updateIdprodctcontroller} from "../Controllers/Consumption.controller.js";
+import { creatConsumptionalonecontroller, creatConsumptioncontroller,
+    getallConsumptioncontroller
+  } from "../Controllers/Consumption.controller.js";
+
 
 const ConsumptionRoutes = Router();
 
 ConsumptionRoutes.post("/createconsumpition/:id_Product", creatConsumptioncontroller)
+ConsumptionRoutes.post("/createconsumpition",creatConsumptionalonecontroller)
 ConsumptionRoutes.get("/ShowConsumptions", getallConsumptioncontroller)
-ConsumptionRoutes.patch("/updateresulteconsupion/:id_Consupitions", updateConsumptionscontroler)
-ConsumptionRoutes.patch("/updateIdproduct/:id", updateIdprodctcontroller)
+
 
 export{ConsumptionRoutes}
