@@ -1,9 +1,13 @@
-import { Sequelize } from "sequelize"
-const sequelize = new Sequelize('mysql://root:oNkRJvtNGdMuzWvPGmdKKeJpvVpfIWCi@roundhouse.proxy.rlwy.net:27050/railway')
+import { Sequelize } from "sequelize";
+
+const sequelize = new Sequelize({
+    dialect: 'sqlite',
+    storage: 'path/to/database.sqlite'
+  });
 
 const testConnection = async () => {
     try{
-        await sequelize.authenticate();
+        await sequelize.authenticate()
         console.log('Conexão com o banco de dados realizada com sucesso!')
     } catch(error){
         console.error('Conexão mal sucedida', error)
