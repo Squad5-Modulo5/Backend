@@ -6,7 +6,7 @@ import cors from "cors"
 const app = express();
 const port = 4979;
 app.use(express.json());
-app.use(cors({origin: "https://ecoelekfrontend.onrender.com"}))
+app.use(cors({origin: "*"}))
 app.use(routes);
 app.use(errorHandler);
 
