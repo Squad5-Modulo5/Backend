@@ -1,7 +1,6 @@
 import { ConsumptionEntity } from "../Entities/Consumption.entity.js"
 class ConsumptionService{
   async createConsumption(Measurement, power, duration, days, id_Product) {
-  
     const resultConsumption = (power * duration * days) / 1000;
 
     try {
