@@ -8,9 +8,13 @@ class ProductsService{
     return Product
     }
   
-    async getallProductservice()
+    async getallProductservice(id_User)
     {
-     const allProducts = ProductEntity.findAll()
+     const allProducts = ProductEntity.findAll({
+        where:{
+            id_User,
+        },
+     })
      return allProducts
     }
   
