@@ -12,7 +12,8 @@ const instacieServiceproduct = new ProductsService
   
 
 const getAllProductscontroller = async (req, res) =>{  
-    const Products = await instacieServiceproduct.getallProductservice()
+    const {id_User}= req.params;
+    const Products = await instacieServiceproduct.getallProductservice(id_User)
     res.json({Products})
 }
 const  deletePoductcontroller = async(req,res)=>{
