@@ -1,0 +1,20 @@
+@baseUrl = http://localhost:4979
+@authToken = {{loginADIMIN.response.body.access_token}}
+
+# ==========================
+# 🚀 ADMIN
+# ==========================
+
+
+###
+# 
+# @name loginADIMIN
+POST {{baseUrl}}/consumpition/noreletion
+Content-Type: application/json
+
+{
+ "Measurement": "kw/h",
+  "power": 20,
+  "duration": 41,
+  "days": 30
+}
