@@ -1,4 +1,5 @@
 import {ProductEntity} from "../Entities/Product.entity.js";
+import { v4 as uuidv4 } from 'uuid';
 class ProductsService{
    
     async createProductservice( product_name, category, id_User )

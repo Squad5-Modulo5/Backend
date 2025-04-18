@@ -7,7 +7,7 @@ import { creatConsumptionalonecontroller, creatConsumptioncontroller,
 const ConsumptionRoutes = Router();
 
 ConsumptionRoutes.post("/createconsumpition/:id_Product", creatConsumptioncontroller)
-ConsumptionRoutes.post("/lala",creatConsumptionalonecontroller)
+ConsumptionRoutes.post("/noreletion",creatConsumptionalonecontroller)
 ConsumptionRoutes.get("/ShowConsumptions", getallConsumptioncontroller)
 
 

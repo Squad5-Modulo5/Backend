@@ -26,3 +26,11 @@ export const UserEntity = database.define("tb_User", {
         allowNull: true,
     }
 });
+(async () => {
+    try {
+        await UserEntity.sync({ alter: true });
+        console.log('Tabela de  UserEntity sincronizada com sucesso!');
+    } catch (error) {
+        console.error('Erro ao sincronizar tabela de produtos:', error);
+    }
+})();

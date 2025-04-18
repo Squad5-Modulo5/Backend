@@ -27,4 +27,16 @@ SpendingEntity.belongsTo(ConsumptionEntity,{
     constraint: true,
     foreignKey: "id_Consumption"
 })
+
+// Sincronização automática (apenas para desenvolvimento)
+(async () => {
+    try {
+        await SpendingEntity.sync({ alter: true });
+        console.log('Tabela de SpendingEntity sincronizada com sucesso!');
+    } catch (error) {
+        console.error('Erro ao sincronizar tabela de produtos:', error);
+    }
+})();
+
+export { ProductEntity };
 export{SpendingEntity}

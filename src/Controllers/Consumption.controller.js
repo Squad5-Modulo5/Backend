@@ -17,19 +17,28 @@ const creatConsumptioncontroller = async (req, res)=>{
     res.json({newConsumption})
 
 }
-const creatConsumptionalonecontroller = async (req, res)=>{
-    const{  Measurement,power,duration,days}= req.body
-    const newConsumption = await instacieServiceConsumption.createConsumptionalone(
+const creatConsumptionalonecontroller = async (req, res) => {
+    try {
+      const { Measurement, power, duration, days } = req.body;
+      
+      // Validação básica
+      if (!Measurement || !power || !duration || !days) {
+        return res.status(400).json({ error: "Todos os campos são obrigatórios" });
+      }
+  
+      const newConsumption = await instacieServiceConsumption.createConsumptionalone(
         Measurement,
-        power,
-        duration,
-        days
-       
-        )
- 
-    res.json({newConsumption})
-
-}
+        Number(power),
+        Number(duration),
+        Number(days)
+      );
+  
+      return res.status(201).json(newConsumption);
+    } catch (error) {
+      console.error("Erro no controller:", error);
+      return res.status(500).json({ error: error.message });
+    }
+  }
  const  getallConsumptioncontroller = async(req,res)=>{
     const consunpitions = await instacieServiceConsumption.getallConsumption()
     res.json({consunpitions}) 

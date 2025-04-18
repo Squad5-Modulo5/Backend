@@ -9,7 +9,7 @@
 ###
 # 
 # @name loginADIMIN
-POST {{baseUrl}}/consumpition/lala
+POST {{baseUrl}}/consumpition/noreletion
 Content-Type: application/json
 
 {
