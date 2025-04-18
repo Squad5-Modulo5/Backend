@@ -9,7 +9,14 @@ const port = 4979;
 
 // Middlewares
 app.use(express.json());
-app.use(cors({ origin: "*" })); // Configuração simplificada do CORS
+app.use(cors({ 
+    origin: [
+        'https://didactic-robot-6jw647jj6wg2q74-5173.app.github.dev',
+        'https://frontend-psi-two-18.vercel.app'
+    ],
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"], // Opcional: métodos permitidos
+    allowedHeaders: ["Content-Type", "Authorization"] // Opcional: headers permitidos
+}));
 
 // Routes
 app.use(routes);
